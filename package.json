@@ -13,6 +13,8 @@
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
+    "cordova-android": "^7.0.0",
+    "cordova-ios": "^4.5.5",
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
@@ -53,7 +55,15 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "prepare-cordova": "yarn build && cordova prepare",
+    "build-android": "yarn build && cordova build android",
+    "build-ios": "yarn build && cordova build ios",
+    "build-all": "yarn build && (cordova build android; cordova build ios)",
+    "run-android": "yarn build && cordova run android",
+    "fix-android": "cordova platform remove android; cordova platform add android",
+    "fix-ios": "cordova platform remove ios; cordova platform add ios",
+    "fix-modules": "rm -rf node_modules && yarn install"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -96,5 +106,11 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "cordova": {
+    "platforms": [
+      "android",
+      "ios"
+    ]
   }
 }

@@ -1,15 +1,25 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
+# cordova
+/plugins/*
+!/plugins
+!/plugins/android.json
+!/plugins/ios.json
+!/plugins/fetch.json
 
-# testing
-/coverage
+/platforms/android
+/platforms/ios
 
 # production
 /build
 /www/*
 !/www/.gitkeep
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
 
 # misc
 .DS_Store
