@@ -1,1 +1,2 @@
 src/bootstrap/registerServiceWorker.js
+/**/*.test.js
