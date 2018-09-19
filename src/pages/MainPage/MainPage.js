@@ -7,7 +7,7 @@ import { setName } from '../../actions/app';
 
 class App extends Component {
   render() {
-    const { name, setName } = this.props;
+    const { name, setAppName } = this.props;
     return (
       <div className="App">
         <header className="App-header">
@@ -17,7 +17,9 @@ class App extends Component {
         <p className="App-intro">
           {name}
         </p>
-        <button onClick={() => setName('REACT REDUX CORDOVA BOILERPLATE')}>SHOW NAME</button>
+        <button type="button" onClick={() => setAppName('REACT REDUX CORDOVA BOILERPLATE')}>
+          SHOW NAME
+        </button>
       </div>
     );
   }
@@ -28,7 +30,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setName: bindActionCreators(setName, dispatch),
+  setAppName: bindActionCreators(setName, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

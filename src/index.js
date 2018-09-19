@@ -28,6 +28,5 @@ if (window.cordova) {
 } else {
   ReactDOM.render(<App />, document.getElementById('root'));
   registerServiceWorker();
-  configureApp['browser']();
+  configureApp.browser();
 }
-
