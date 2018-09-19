@@ -8,6 +8,8 @@
 
 # production
 /build
+/www/*
+!/www/.gitkeep
 
 # misc
 .DS_Store
